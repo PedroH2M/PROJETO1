@@ -1,11 +1,18 @@
 <?php
+    echo "Painel administrativo";
+?>
 
-    include_once "topo.php";
-    include_once "menu.php";
-
+<nav>
+    <a href="index.php">Inicio</a>
+    <a href="?pg=clientes-admin">Clientes</a>
+    <a href="?pg=paginas-admin">Administra Páginas</a>
+    <a href="?pg=contato-admin">Administrar Contatos</a>
+    <a href="?pg=avaliacao-admin">Lista de Avaliações</a>
+</nav>
+<?php
     // Conteúdo
     if(empty($_SERVER["QUERY_STRING"])){
-        $var = "conteudo";
+        $var = "principal";
         include_once "$var.php";
     }elseif($_GET['pg']){
         $pg = $_GET['pg'];
@@ -13,5 +20,4 @@
     }else{
         echo "Página não encontrada";
     }
-
-    include_once "rodape.php";
+?>
